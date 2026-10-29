@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Abhijeet Bhandari — 3D Character Portfolio
 
 An award-winning caliber interactive 3D character portfolio website inspired by the iconic clay/risograph 3D character aesthetic with playful face stickers, real-time 3D cursor eye-tracking, and mouse-scroll guided cinematic face gliding.
@@ -83,3 +84,6 @@ abhijeet-portfolio-3d/
 ├── confetti.min.js      # Confetti particle burst library
 └── OrbitControls.js     # OrbitControls helper
 ```
+=======
+# MyPortfolio
+>>>>>>> 62098d11b506835a926e2db514e2e4610597472e
