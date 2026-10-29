@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhijeet Bhandari — 3D Character Portfolio</title>
+  <meta name="description" content="Portfolio of Abhijeet Bhandari, Full Stack React & Java Developer, 1st Year MCA Student from Uttarakhand, India. Interactive 3D Character Experience.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading 3D Experience...</div>
+  </div>
+
+  <!-- Diagonal Halftone Risograph & Grain Overlays (Matching Reference Photo) -->
+  <div class="risograph-overlay" id="risographOverlay"></div>
+  <div class="noise-overlay" id="noiseOverlay"></div>
+
+  <!-- WebGL Canvas for 3D Interactive Character -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="status-dot"></span>
+      <span>Abhi Bhandari</span>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-pill-btn" id="sfxToggleBtn" title="Toggle Interactive Audio">
+        <span id="sfxIcon">🔊</span>
+        <span>Sound</span>
+      </button>
+      <button class="icon-pill-btn" id="grainToggleBtn" title="Toggle Risograph Print Overlay">
+        <span>🎨</span>
+        <span>Risograph</span>
+      </button>
+      <a href="https://github.com/CodeRuNNer-ai" target="_blank" rel="noopener noreferrer" class="icon-pill-btn primary">
+        <span>GitHub</span>
+        <span>↗</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Floating Sticker Inspector Tooltip -->
+  <div class="sticker-popover" id="stickerPopover">
+    <div class="sticker-popover-title">
+      <span id="popoverBadge">🥤</span>
+      <span id="popoverTitle">Diet Coke</span>
+    </div>
+    <div class="sticker-popover-desc" id="popoverDesc">
+      Fuel for late-night coding sessions, algorithmic breakthroughs & pure focus.
+    </div>
+  </div>
+
+  <!-- Main Scrollable Story Content -->
+  <div class="content-wrapper">
+
+    <!-- SECTION 1: HERO (Replicating exact layout and typography of reference image) -->
+    <section class="portfolio-section hero-section" id="heroSection">
+      <div class="hero-content">
+        <!-- Signature Hand-brushed Chalk Headline -->
+        <h1 class="hero-title-brush">About Abhi</h1>
+
+        <!-- Poetic Editorial Subtitle -->
+        <p class="hero-subtitle">
+          Hi, I'm a Full Stack Developer specializing in React and Java development. I build responsive web applications, robust backends, and user-friendly solutions.
+        </p>
+
+        <!-- Skill & Location Pills -->
+        <div class="hero-pills">
+          <span class="badge-tag">📍 Uttarakhand, India</span>
+          <span class="badge-tag">⚛️ React Developer</span>
+          <span class="badge-tag">☕ Java Specialist</span>
+          <span class="badge-tag">🟢 Node.js & Express</span>
+          <span class="badge-tag">🗄️ SQL & MongoDB</span>
+        </div>
+
+        <!-- Reference Image Scroll Indicator -->
+        <div class="scroll-indicator-wrap" id="scrollTrigger">
+          <span class="scroll-text">SCROLL</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: STORY & EDUCATION -->
+    <section class="portfolio-section story-section" id="storySection">
+      <div class="interactive-panel story-card">
+        <span class="section-tag">01 // About Me</span>
+        <h2 class="section-title">Full Stack Developer — React & Java</h2>
+        <p class="story-text">
+          Hi, I'm a Full Stack Developer specializing in React and Java development. I have experience with HTML, CSS, JavaScript, React, Node.js, Express.js, SQL, and Java. I enjoy building responsive web applications, solving problems, and continuously learning new technologies to create efficient and user-friendly solutions.
+        </p>
+
+        <div class="timeline-grid">
+          <div class="timeline-item active">
+            <div>
+              <div class="timeline-year">Present — 2026</div>
+              <div class="timeline-role">Master of Computer Applications (MCA)</div>
+              <div class="timeline-desc">First Year Student. Deepening expertise in advanced algorithms, scalable cloud architectures, Java backend engineering, and modern web frameworks.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-year">Graduated</div>
+              <div class="timeline-role">Bachelor of Computer Applications (BCA)</div>
+              <div class="timeline-desc">Solid grounding in Object-Oriented Programming, Database Management Systems, Data Structures, and Computer Networking.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-year">Roots</div>
+              <div class="timeline-role">Uttarakhand, India</div>
+              <div class="timeline-desc">Inspired by the serenity of the Himalayas to write clean, resilient, and high-impact code.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TECH STACK & SKILLS -->
+    <section class="portfolio-section skills-section" id="skillsSection">
+      <div class="interactive-panel skills-card">
+        <span class="section-tag">02 // Core Capabilities</span>
+        <h2 class="section-title">Full Stack React & Java Toolkit</h2>
+        <p class="story-text">
+          Bridging dynamic frontend responsiveness with enterprise-grade backend reliability.
+        </p>
+
+        <div class="skills-matrix">
+          <div class="skill-pill">
+            <div class="skill-header">
+              <span class="skill-name">⚛️ React & Redux</span>
+              <span class="skill-level">90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-header">
+              <span class="skill-name">☕ Java (Core & Advanced)</span>
+              <span class="skill-level">92%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-header">
+              <span class="skill-name">🌐 JavaScript (ES6+)</span>
+              <span class="skill-level">88%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-header">
+              <span class="skill-name">🐍 Python</span>
+              <span class="skill-level">82%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 82%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-header">
+              <span class="skill-name">🟢 Node.js & Express.js</span>
+              <span class="skill-level">88%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-header">
+              <span class="skill-name">🗄️ SQL & MongoDB</span>
+              <span class="skill-level">86%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 86%"></div></div>
+          </div>
+
+          <div class="skill-pill">
+            <div class="skill-header">
+              <span class="skill-name">🎨 HTML5, CSS3 & Responsive UI</span>
+              <span class="skill-level">94%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width: 94%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PROJECTS -->
+    <section class="portfolio-section projects-section" id="projectsSection">
+      <div class="interactive-panel projects-card">
+        <span class="section-tag">03 // Featured Work</span>
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="project-item">
+          <div class="project-top">
+            <span class="project-name">Full-Stack Commerce & Inventory</span>
+            <span class="project-badge">React + Java</span>
+          </div>
+          <p class="project-desc">Complete e-commerce platform featuring JWT authentication, reactive shopping cart state, Spring Boot REST APIs, and transactional SQL data layer.</p>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Java Spring</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">REST API</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-top">
+            <span class="project-name">Real-Time Analytics Dashboard</span>
+            <span class="project-badge">React + WebSockets</span>
+          </div>
+          <p class="project-desc">Interactive administrative telemetry suite visualizing performance metrics, charts, and data filters with sub-second live state updates.</p>
+          <div class="project-tech">
+            <span class="tech-tag">React 18</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">CSS3 Grid</span>
+            <span class="tech-tag">ChartJS</span>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-top">
+            <span class="project-name">Algorithm Visualizer & Playground</span>
+            <span class="project-badge">Interactive CS</span>
+          </div>
+          <p class="project-desc">Educational sandbox rendering sorting, graph traversal (Dijkstra, A*), and dynamic programming algorithms in real-time step animations.</p>
+          <div class="project-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Algorithms</span>
+            <span class="tech-tag">HTML5 Canvas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CONTACT & CONNECT -->
+    <section class="portfolio-section contact-section" id="contactSection">
+      <div class="interactive-panel contact-card">
+        <span class="section-tag">04 // Get In Touch</span>
+        <h2 class="section-title">Let’s Build Something Great Together</h2>
+        <p class="story-text">
+          Currently open to MCA internships, junior developer roles, and freelance collaborations.
+        </p>
+
+        <div class="contact-channels">
+          <div class="contact-btn" id="copyEmailBtn" title="Click to copy email">
+            <div class="contact-label">
+              <span>✉️</span>
+              <span>Email</span>
+            </div>
+            <div class="contact-val">abhibhandari30@gmail.com</div>
+            <span class="copy-hint">Copy 📋</span>
+          </div>
+
+          <div class="contact-btn" id="copyPhoneBtn" title="Click to copy phone">
+            <div class="contact-label">
+              <span>📱</span>
+              <span>Phone</span>
+            </div>
+            <div class="contact-val">+91 8193033508</div>
+            <span class="copy-hint">Copy 📋</span>
+          </div>
+
+          <a href="https://github.com/CodeRuNNer-ai" target="_blank" rel="noopener noreferrer" class="contact-btn">
+            <div class="contact-label">
+              <span>🐙</span>
+              <span>GitHub</span>
+            </div>
+            <div class="contact-val">github.com/CodeRuNNer-ai</div>
+            <span class="copy-hint">Visit ↗</span>
+          </a>
+
+          <div class="contact-btn">
+            <div class="contact-label">
+              <span>📍</span>
+              <span>Location</span>
+            </div>
+            <div class="contact-val">Uttarakhand, India</div>
+            <span class="copy-hint">GMT +5:30</span>
+          </div>
+        </div>
+
+        <div class="message-box">
+          <input type="text" class="message-input" id="quickMsgInput" placeholder="Say hello or ask a question...">
+          <button class="send-btn" id="quickSendBtn">Send</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast Notification element -->
+  <div class="toast-msg" id="toastMsg">Copied to clipboard! ✨</div>
+
+  <!-- Scripts: Local with CDN Fallbacks -->
+  <script src="three.min.js"></script>
+  <script src="GLTFLoader.js"></script>
+  <script src="modelData.js"></script>
+  <script src="stickersData.js"></script>
+  <script src="gsap.min.js"></script>
+  <script src="ScrollTrigger.min.js"></script>
+  <script src="confetti.min.js"></script>
+
+  <!-- Application Logic -->
+  <script src="character.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
